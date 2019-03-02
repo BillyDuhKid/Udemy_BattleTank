@@ -2,12 +2,14 @@
 
 #pragma once
 
+// Headers First CoreMinimal.h, inherited Pawn.h, and last is always generated.h rest should be forward declerations
 #include "CoreMinimal.h"
-#include "TankAimingComponent.h"
 #include "GameFramework/Pawn.h"
-#include "Tank.generated.h"	// put new #includes above *.generated.h
+#include "Tank.generated.h"
 
-class UTankBarrel;	// Forward Declaration
+// Forward Declaration
+class UTankBarrel;
+class UTankAimingComponent;
 
 UCLASS()
 class BATTLETANK_API ATank : public APawn
