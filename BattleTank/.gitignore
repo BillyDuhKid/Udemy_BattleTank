@@ -75,6 +75,3 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
-
-# Unreal 4 Starter Content
-Content/StarterContent/*
