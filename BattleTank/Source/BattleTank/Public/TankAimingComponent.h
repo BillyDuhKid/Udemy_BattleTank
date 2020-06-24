@@ -4,6 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "Components/StaticMeshComponent.h"
+#include "GameFramework/Actor.h"
+#include "Components/ActorComponent.h"
+#include "Components/SceneComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "TankBarrel.h"
+#include "TankTurret.h"
 #include "TankAimingComponent.generated.h"
 
 // Forward Declaration

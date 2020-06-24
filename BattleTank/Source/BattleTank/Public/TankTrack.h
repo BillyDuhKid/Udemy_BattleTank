@@ -3,6 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GameFramework/Actor.h"
+#include "UObject/ConstructorHelpers.h"
 #include "Components/StaticMeshComponent.h"
 #include "TankTrack.generated.h"
 
@@ -15,11 +17,13 @@ class BATTLETANK_API UTankTrack : public UStaticMeshComponent
 	GENERATED_BODY()
 
 public:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+	UTankTrack();
 
 	// Set a throttle between -1 and +1
 	UFUNCTION(BlueprintCallable, Category = Input)
 	void SetThrottle(float Throttle);
+
+	UPROPERTY(EditDefaultsOnly)
+	float TrackMaxDrivingForce = 400000;	// Assume 40 tonne tank and 1g acceleration
 	
 };

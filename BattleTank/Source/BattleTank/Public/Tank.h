@@ -5,6 +5,9 @@
 // Headers First CoreMinimal.h, inherited Pawn.h, and last is always generated.h rest should be forward declerations
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+#include "TankBarrel.h"
+#include "Projectile.h"
+#include "TankAimingComponent.h"
 #include "Tank.generated.h"
 
 // Forward Declaration
@@ -43,13 +46,13 @@ private:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	UPROPERTY(EditAnywhere, Category = Setup)
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
 	TSubclassOf<AProjectile>ProjectileBlueprint;
 
-	UPROPERTY(EditAnywhere, Category = Firing)
+	UPROPERTY(EditDefaultsOnly, Category = Firing)
 	float LaunchSpeed = 4000;
 
-	UPROPERTY(EditAnywhere, Category = Firing)
+	UPROPERTY(EditDefaultsOnly, Category = Firing)
 	float ReloadTimeInSeconds = 3;
 
 

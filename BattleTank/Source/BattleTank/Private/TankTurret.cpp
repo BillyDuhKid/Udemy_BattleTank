@@ -2,6 +2,13 @@
 
 #include "TankTurret.h"
 
+UTankTurret::UTankTurret()
+{
+	// BUG FIX: Mesh Disappearing
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> staticMesh(TEXT("/Game/Tank/tank_fbx_Turret.tank_fbx_Turret"));
+	if (staticMesh.Object != nullptr){SetStaticMesh(staticMesh.Object);}
+}
+
 void UTankTurret::Rotate(float RelativeSpeed)
 {
 	RelativeSpeed = FMath::Clamp<float>(RelativeSpeed, -1, +1);

@@ -2,6 +2,13 @@
 
 #include "TankBarrel.h"
 
+UTankBarrel::UTankBarrel()
+{
+	// BUG FIX: Mesh Disappearing
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> staticMesh(TEXT("/Game/Tank/tank_fbx_Barrel.tank_fbx_Barrel"));
+	if (staticMesh.Object != nullptr) { SetStaticMesh(staticMesh.Object); }
+}
+
 void UTankBarrel::Elevate(float RelativeSpeed)
 {
 	// Move the barrel the right amount this frame
